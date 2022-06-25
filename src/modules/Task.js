@@ -26,4 +26,9 @@ const Task = (title, description, dueDate, priority) =>{
     }
 };
 
+//TODO
+// - add validation?
+// - or just do it css side?
+
+
 export default Task;
