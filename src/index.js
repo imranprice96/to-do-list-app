@@ -1,5 +1,6 @@
 import Task from './modules/Task';
-import { format } from 'date-fns'
+import taskController from './modules/taskController';
+import { format } from 'date-fns';
 
 let t1 = Task(
     'Tame goat',
@@ -8,7 +9,9 @@ let t1 = Task(
     'high'
 );
 
-console.log(t1.getTitle());    
-console.log(t1.getDescription());
-console.log(t1.getDueDate());
-console.log(t1.getPriority());
+console.log(t1.title);    
+console.log(t1.description);
+console.log(t1.dueDate);
+console.log(t1.priority);
+
+taskController();
