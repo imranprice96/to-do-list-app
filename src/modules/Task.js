@@ -1,3 +1,5 @@
+import { format } from 'date-fns';
+
 const Task = (title, description, dueDate, priority) =>{
 
     /*
@@ -11,6 +13,10 @@ const Task = (title, description, dueDate, priority) =>{
     const setDescription = (newDescription) => description = newDescription;
     const setDueDate = (newDueDate) => dueDate = newDueDate;
     const setPriority = (newPriority) => priority = newPriority;
+
+    const printTask = () => {
+        console.log(title, description, dueDate, priority);
+    };
 
     return{
         title,
@@ -26,7 +32,8 @@ const Task = (title, description, dueDate, priority) =>{
         setTitle,
         setDescription,
         setDueDate,
-        setPriority
+        setPriority,
+        printTask
     }
 };
 

@@ -11,13 +11,23 @@ const taskController = (() => {
 
 
 import Task from './Task';
+import addTask from './addTask';
 
 
 const taskController = () => {
-    const addBtn = document.getElementById('add');
+    const addBtn = document.getElementById('add-btn');
     addBtn.addEventListener('click', (e) =>{
+        /*
+        ADD OPEN OF FORM
         let newTask = Task('Dishes','Clean up your mess',new Date(), 'Low');
-        console.table(newTask);
+        newTask.printTask();
+        
+        */console.log('234');
+    });
+    const enterBtn = document.getElementById('add-sumbit');
+    enterBtn.addEventListener('click', (e) =>{
+        const newTask = addTask();
+        newTask.printTask();
     });
 };
 export default taskController;
