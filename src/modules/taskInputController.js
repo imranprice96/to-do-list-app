@@ -1,7 +1,7 @@
 import Task from './Task';
 
 //Get input from form
-const addTaskController = () => {
+const taskInputController = () => {
     const title = document.getElementById('title').value;
     const description = document.getElementById('description').value;
     const dueDate = document.getElementById('date').value;
@@ -10,8 +10,7 @@ const addTaskController = () => {
     if (validateInput(title,description,date)){
         let newTask = Task(title, description, dueDate, priority);
         return newTask;
-    }
-        
+    }     
 }
 
 
@@ -30,4 +29,4 @@ const getPriority = () => {
 };
 
 
-export default addTaskController;
+export default taskInputController;

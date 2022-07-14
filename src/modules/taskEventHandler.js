@@ -1,33 +1,24 @@
-/*
-const taskController = (() => {
-    //add eventlisteners for adding and editing.
-    const addBtn = document.getElementById('add');
-    addBtn.addEventListener('click', (e) =>{
-        console.log(button);
-    });
-
-})();
-*/
-
-
-import Task from './Task';
-import addTaskController from './addTaskForm';
+import taskInputController from './taskInputController';
 
 
 const taskEventHandler = () => {
+    const formDiv = document.getElementById('add');
     const addBtn = document.getElementById('add-btn');
+    const cancelBtn = document.getElementById('add-close');
+    const enterBtn = document.getElementById('add-submit');
+
     addBtn.addEventListener('click', (e) =>{
-        /*
-        ADD OPEN OF FORM
-        let newTask = Task('Dishes','Clean up your mess',new Date(), 'Low');
-        newTask.printTask();
-        
-        */console.log('234');
+        formDiv.style.display = 'block';
     });
-    const enterBtn = document.getElementById('add-sumbit');
+    
     enterBtn.addEventListener('click', (e) =>{
-        const newTask = addTaskController();
+        const newTask = taskInputController();
+        formDiv.style.display = 'none';
         newTask.printTask();
+    });
+   
+    cancelBtn.addEventListener('click', (e) =>{
+        formDiv.style.display = 'none';
     });
 };
 export default taskEventHandler;
