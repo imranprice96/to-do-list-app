@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_taskEventHandler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/taskEventHandler */ \"./src/modules/taskEventHandler.js\");\n\n\n\n(0,_modules_taskEventHandler__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n//# sourceURL=webpack://to-do-list-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_taskEventHandler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/taskEventHandler */ \"./src/modules/taskEventHandler.js\");\n/* harmony import */ var _modules_pages_pageController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/pages/pageController */ \"./src/modules/pages/pageController.js\");\n\n\n\n(0,_modules_pages_pageController__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n(0,_modules_taskEventHandler__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n//# sourceURL=webpack://to-do-list-app/./src/index.js?");
 
 /***/ }),
 
@@ -27,6 +27,46 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\nconst Task = (title, description, dueDate, priority) =>{\n\n    /*\n    const getTitle = () => title;\n    const getDescription = () => description;\n    const getDueDate = () => dueDate;\n    const getPriority = () => priority;\n    */\n\n    const setTitle = (newTitle) => title = newTitle;\n    const setDescription = (newDescription) => description = newDescription;\n    const setDueDate = (newDueDate) => dueDate = newDueDate;\n    const setPriority = (newPriority) => priority = newPriority;\n\n    const printTask = () => {\n        console.log(title, description, dueDate, priority);\n    };\n\n    return{\n        title,\n        description,\n        dueDate,\n        priority,\n        /*\n        getTitle,\n        getDescription,\n        getDueDate,\n        getPriority,\n        */\n        setTitle,\n        setDescription,\n        setDueDate,\n        setPriority,\n        printTask\n    }\n};\n\n//TODO\n// - add validation?\n// - or just do it css side?\n// return date formatted?\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Task);\n\n\n//# sourceURL=webpack://to-do-list-app/./src/modules/Task.js?");
+
+/***/ }),
+
+/***/ "./src/modules/pages/allPage.js":
+/*!**************************************!*\
+  !*** ./src/modules/pages/allPage.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst allPage = () => {\n    const h1 = document.createElement('h1');\n    h1.innerHTML = 'All';\n\n    return h1;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (allPage);\n\n//# sourceURL=webpack://to-do-list-app/./src/modules/pages/allPage.js?");
+
+/***/ }),
+
+/***/ "./src/modules/pages/pageController.js":
+/*!*********************************************!*\
+  !*** ./src/modules/pages/pageController.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _allPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./allPage */ \"./src/modules/pages/allPage.js\");\n/* harmony import */ var _todayPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todayPage */ \"./src/modules/pages/todayPage.js\");\n/* harmony import */ var _projectsPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./projectsPage */ \"./src/modules/pages/projectsPage.js\");\n\n\n\n\nconst pageController = () => {\n    const content = document.getElementById('content');\n    const all = document.getElementById('all');\n    const today = document.getElementById('today');\n    const projects = document.getElementById('projects');\n\n    all.addEventListener('focus', (e) => {\n        content.innerHTML = '';\n        all.focus();\n        content.appendChild((0,_allPage__WEBPACK_IMPORTED_MODULE_0__[\"default\"])());\n    });\n    today.addEventListener('focus', (e) => {\n        content.innerHTML = '';\n        content.appendChild((0,_todayPage__WEBPACK_IMPORTED_MODULE_1__[\"default\"])());\n    });\n    projects.addEventListener('focus', (e) => {\n        content.innerHTML = '';\n        content.appendChild((0,_projectsPage__WEBPACK_IMPORTED_MODULE_2__[\"default\"])());\n    });\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pageController);\n\n//# sourceURL=webpack://to-do-list-app/./src/modules/pages/pageController.js?");
+
+/***/ }),
+
+/***/ "./src/modules/pages/projectsPage.js":
+/*!*******************************************!*\
+  !*** ./src/modules/pages/projectsPage.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst projectsPage = () => {\n    const h1 = document.createElement('h1');\n    h1.innerHTML = 'Projects';\n\n    return h1;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (projectsPage);\n\n//# sourceURL=webpack://to-do-list-app/./src/modules/pages/projectsPage.js?");
+
+/***/ }),
+
+/***/ "./src/modules/pages/todayPage.js":
+/*!****************************************!*\
+  !*** ./src/modules/pages/todayPage.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst todayPage = () => {\n    const h1 = document.createElement('h1');\n    h1.innerHTML = 'Today';\n\n    return h1;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (todayPage);\n\n//# sourceURL=webpack://to-do-list-app/./src/modules/pages/todayPage.js?");
 
 /***/ }),
 
