@@ -11,10 +11,10 @@ const taskController = (() => {
 
 
 import Task from './Task';
-import addTask from './addTask';
+import addTaskController from './addTaskForm';
 
 
-const taskController = () => {
+const taskEventHandler = () => {
     const addBtn = document.getElementById('add-btn');
     addBtn.addEventListener('click', (e) =>{
         /*
@@ -26,8 +26,8 @@ const taskController = () => {
     });
     const enterBtn = document.getElementById('add-sumbit');
     enterBtn.addEventListener('click', (e) =>{
-        const newTask = addTask();
+        const newTask = addTaskController();
         newTask.printTask();
     });
 };
-export default taskController;
+export default taskEventHandler;

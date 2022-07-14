@@ -1,5 +1,5 @@
-import Task from './modules/Task';
-import taskController from './modules/taskController';
+import taskEventHandler from './modules/taskEventHandler';
+import addTaskForm from './modules/addTaskForm'
 
 /*
 let t1 = Task(
@@ -12,4 +12,6 @@ let t1 = Task(
 t1.printTask();
 */
 
-taskController();
+document.getElementById('add').appendChild(addTaskForm());
+
+taskEventHandler();

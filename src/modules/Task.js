@@ -1,4 +1,3 @@
-import { format } from 'date-fns';
 
 const Task = (title, description, dueDate, priority) =>{
 

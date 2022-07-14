@@ -1,7 +1,7 @@
-import { hi } from 'date-fns/locale';
 import Task from './Task';
 
-const addTask = () => {
+//Get input from form
+const addTaskController = () => {
     const title = document.getElementById('title').value;
     const description = document.getElementById('description').value;
     const dueDate = document.getElementById('date').value;
@@ -14,15 +14,6 @@ const addTask = () => {
         
 }
 
-
-
-//TO DO
-/*Tomorrow:
- * add behaviour for getting form
- * store data received into new task
- * 
- * 
- */
 
 const validateInput = (title, description, date) => {
     // add date validation for min date
@@ -39,4 +30,4 @@ const getPriority = () => {
 };
 
 
-export default addTask;
+export default addTaskController;
