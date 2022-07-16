@@ -10,7 +10,6 @@ const pageController = () => {
 
     all.addEventListener('focus', (e) => {
         content.innerHTML = '';
-        all.focus();
         content.appendChild(allPage());
     });
     today.addEventListener('focus', (e) => {
@@ -21,6 +20,8 @@ const pageController = () => {
         content.innerHTML = '';
         content.appendChild(projectsPage());
     });
+
+    //add and remove css background based on click
 }
 
 export default pageController;

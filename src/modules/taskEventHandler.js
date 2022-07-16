@@ -1,3 +1,4 @@
+import projectController from './projectController';
 import taskInputController from './taskInputController';
 
 
@@ -11,10 +12,9 @@ const taskEventHandler = () => {
         formDiv.style.display = 'block';
     });
     
-    enterBtn.addEventListener('click', (e) =>{
-        const newTask = taskInputController();
+    enterBtn.addEventListener('click', (e) =>{;
+        taskInputController();
         formDiv.style.display = 'none';
-        newTask.printTask();
     });
    
     cancelBtn.addEventListener('click', (e) =>{

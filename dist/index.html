@@ -21,7 +21,9 @@
                 <span class="today-title">Today</span>
             </div>
              <div class="projects" id="projects" tabindex="-1">
-                <span class="projects-title">Projects</span>
+                <span class="projects-title">Projects
+                    <button id="add-project">+</button>
+                </span>
                 <div id="projects"></div>
             </div>
             <button id="add-btn">ADD</button>
@@ -32,6 +34,12 @@
                 <div>
                     <label for="title">Title:</label>
                     <input type="text" name="title" id="title">
+                </div>
+                <div>
+                    <label for="project">Project:</label>
+                    <select name="project" id="project">
+                        <option value="default">Default</option>
+                    </select>
                 </div>
                 <div>
                     <label for="description">Description:</label>

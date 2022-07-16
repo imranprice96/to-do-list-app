@@ -1,4 +1,5 @@
 import Task from './Task';
+import projectController from './projectController';
 
 //Get input from form
 const taskInputController = () => {
@@ -6,12 +7,21 @@ const taskInputController = () => {
     const description = document.getElementById('description').value;
     const dueDate = document.getElementById('date').value;
     const priority = getPriority();
+    const project = document.getElementById('project');
+
+    //projectController();
+    //console.log(project.value);
 
     if (validateInput(title,description,date)){
         let newTask = Task(title, description, dueDate, priority);
-        return newTask;
+        projectController.findProject(project.value).addTask(newTask);
+        //projectController.findProject(project.value).printProject();
+
     }     
 }
+
+
+
 
 
 const validateInput = (title, description, date) => {
