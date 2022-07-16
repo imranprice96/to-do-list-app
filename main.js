@@ -10,13 +10,33 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/addProject.js":
+/*!***************************!*\
+  !*** ./src/addProject.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst addProject = () =>{\n    const div = document.createElement('div');\n    const form = document.createElement('div');\n    form.setAttribute('action', '');\n    form.setAttribute('method', 'get');\n    div.appendChild(form);\n\n    const title = document.createElement('input');\n    title.setAttribute('type', 'text');\n    title.setAttribute('name', 'project-title');\n    title.setAttribute('id', 'project-title');\n\n    const tLabel = document.createElement('label');\n    tLabel.setAttribute('for', 'project-title');\n    tLabel.innerHTML = 'Title:'\n\n    form.appendChild(tLabel);\n    form.appendChild(title);\n\n    const enterBtn = document.createElement('button');\n    enterBtn.setAttribute('type','button');\n    enterBtn.setAttribute('id','project-submit');\n    enterBtn.innerHTML = 'Enter';\n\n\n    const cancelBtn = document.createElement('button');\n    cancelBtn.setAttribute('type','button');\n    cancelBtn.setAttribute('id','project-cancel');\n    cancelBtn.innerHTML = 'Cancel';\n\n    const buttonDiv = document.createElement('div');\n    buttonDiv.appendChild(enterBtn);\n    buttonDiv.appendChild(cancelBtn);\n\n    form.appendChild(buttonDiv);\n\n    return div;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addProject);\n\n//# sourceURL=webpack://to-do-list-app/./src/addProject.js?");
+
+/***/ }),
+
+/***/ "./src/addProjectEventHandler.js":
+/*!***************************************!*\
+  !*** ./src/addProjectEventHandler.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _addProject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addProject */ \"./src/addProject.js\");\n \n\n const addProjectEventHandler = () => {\n    const addBtn = document.getElementById('add-project');\n    addBtn.addEventListener('click' , (e) => {\n        document.getElementById('content').appendChild((0,_addProject__WEBPACK_IMPORTED_MODULE_0__[\"default\"])());\n        const div = (0,_addProject__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n        console.log(div);\n        console.log('----');\n    });\n }\n\n /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addProjectEventHandler);\n\n//# sourceURL=webpack://to-do-list-app/./src/addProjectEventHandler.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_taskEventHandler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/taskEventHandler */ \"./src/modules/taskEventHandler.js\");\n/* harmony import */ var _modules_pages_pageController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/pages/pageController */ \"./src/modules/pages/pageController.js\");\n\n\n\n(0,_modules_pages_pageController__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n(0,_modules_taskEventHandler__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n//# sourceURL=webpack://to-do-list-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_taskEventHandler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/taskEventHandler */ \"./src/modules/taskEventHandler.js\");\n/* harmony import */ var _modules_pages_pageController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/pages/pageController */ \"./src/modules/pages/pageController.js\");\n/* harmony import */ var _addProjectEventHandler__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addProjectEventHandler */ \"./src/addProjectEventHandler.js\");\n\n\n\n\n(0,_modules_pages_pageController__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n(0,_modules_taskEventHandler__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n(0,_addProjectEventHandler__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\n\n//# sourceURL=webpack://to-do-list-app/./src/index.js?");
 
 /***/ }),
 
