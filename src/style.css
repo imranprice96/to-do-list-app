@@ -75,9 +75,11 @@ body{
 }
 /* ----------------------- */
 
-#add{
+.popup-box-closed{
+    border: 5px solid var(--primary1);
+    padding: 5px;
     background-color: white;
-    display: none;
+    border-radius: 20px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -85,19 +87,18 @@ body{
     width: 500px;
     margin-top: -150px;
     margin-left: -250px;
-
-    padding: 10px;
-    border: 2px solid black;
 }
 
-#add form{
+.popup-stlying{
     display: flex;
     flex-direction: column;
     gap:10px;
 }
 
-
-.close-form{
-    display: none;
+.open-popup{
+    display: block;
 }
 
+.close-popup{
+    display: none;
+}

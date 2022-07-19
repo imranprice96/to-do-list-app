@@ -1,6 +1,8 @@
 const addProject = () =>{
     const div = document.createElement('div');
+    div.setAttribute('id','add-project-div');
     const form = document.createElement('div');
+    form.setAttribute('id','add-project-form');
     form.setAttribute('action', '');
     form.setAttribute('method', 'get');
     div.appendChild(form);
@@ -19,13 +21,13 @@ const addProject = () =>{
 
     const enterBtn = document.createElement('button');
     enterBtn.setAttribute('type','button');
-    enterBtn.setAttribute('id','project-submit');
+    enterBtn.setAttribute('id','add-project-submit');
     enterBtn.innerHTML = 'Enter';
 
 
     const cancelBtn = document.createElement('button');
     cancelBtn.setAttribute('type','button');
-    cancelBtn.setAttribute('id','project-cancel');
+    cancelBtn.setAttribute('id','add-project-close');
     cancelBtn.innerHTML = 'Cancel';
 
     const buttonDiv = document.createElement('div');
