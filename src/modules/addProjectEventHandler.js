@@ -1,5 +1,7 @@
  import addProject from "./addProject";
  import '../style.css';
+ import projectController from "./projectController";
+ import Project from './Project';
 
  const addProjectEventHandler = () => {
     document.getElementById('content').appendChild(addProject());
@@ -14,6 +16,7 @@
     form.classList.add('popup-stlying');
 
 
+    //add form resets
     const openForm = () => {
         if(formDiv.classList.contains('close-popup')){
             formDiv.classList.remove('close-popup');
@@ -34,6 +37,12 @@
     
     enterBtn.addEventListener('click', (e) =>{;
         // TODO: project input controller
+        const title = document.getElementById('project-title').value;
+        if(validateInput(title)){
+            const newProject = Project(title);
+            projectController.addProject(newProject);
+            projectController.printProjects();
+        }
         closeForm();
     });
    
@@ -41,6 +50,9 @@
         closeForm();
     });
     
+    const validateInput = (newTitle) => {
+        return newTitle.value != '' ? true : false;
+    }
     //add way to close the other form and reset if it is already open
  }
 
