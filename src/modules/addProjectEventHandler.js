@@ -4,15 +4,18 @@
  import Project from './Project';
 
  const addProjectEventHandler = () => {
-    document.getElementById('content').appendChild(addProject());
+    document.getElementById('body').appendChild(addProject());
     const addBtn = document.getElementById('add-project');
-    const formDiv = document.getElementById('add-project-div');
+    const formDiv = document.getElementById('project-overlay');
     const cancelBtn = document.getElementById('add-project-close');
     const enterBtn = document.getElementById('add-project-submit');
     const form = document.getElementById('add-project-form');
 
+    formDiv.classList.add('popup-background');
     formDiv.classList.add('close-popup');
-    formDiv.classList.add('popup-box-closed');
+
+    const innerDiv = document.getElementById('add-project-div');
+    innerDiv.classList.add('popup-box-closed');
     form.classList.add('popup-stlying');
 
 
@@ -31,20 +34,13 @@
         formDiv.classList.add('close-popup');
     }
 
-    const getProjects = () => {
-        let projectSelect = document.getElementById('project');
-        projectSelect.innerHTML = '';
-        for(const p in projectController.projects){
-            let option = document.createElement('option');
-            option.setAttribute('value', projectController.projects[p].title);
-            option.innerHTML  = projectController.projects[p].title;
-            projectSelect.appendChild(option);
-        }
+    const resetForm = () => {
+        form.reset();
     }
+
 
     addBtn.addEventListener('click' , (e) => {
         openForm();
-        getProjects();
     });
     
     enterBtn.addEventListener('click', (e) =>{;
@@ -56,10 +52,12 @@
             projectController.printProjects();
         }
         closeForm();
+        resetForm();
     });
    
     cancelBtn.addEventListener('click', (e) =>{
         closeForm();
+        resetForm();
     });
     
     const validateInput = (newTitle) => {

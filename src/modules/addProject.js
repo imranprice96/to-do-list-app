@@ -36,7 +36,10 @@ const addProject = () =>{
 
     form.appendChild(buttonDiv);
 
-    return div;
+    const outerDiv = document.createElement('div');
+    outerDiv.setAttribute('id', 'project-overlay');
+    outerDiv.appendChild(div);
+    return outerDiv;
 }
 
 export default addProject;
