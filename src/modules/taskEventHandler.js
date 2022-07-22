@@ -4,7 +4,7 @@ import '../style.css';
 
 
 const taskEventHandler = () => {
-    const formDiv = document.getElementById('add');
+    const formDiv = document.getElementById('form-overlay');
     const addBtn = document.getElementById('add-btn');
     const cancelBtn = document.getElementById('add-close');
     const enterBtn = document.getElementById('add-submit');
@@ -24,19 +24,35 @@ const taskEventHandler = () => {
         formDiv.classList.add('close-popup');
     }
 
+    const resetForm = () => {
+        document.getElementById('task-form').reset();
+    }
+
+    const getProjects = () => {
+        let projectSelect = document.getElementById('project');
+        projectSelect.innerHTML = '';
+        for(const p in projectController.projects){
+            let option = document.createElement('option');
+            option.setAttribute('value', projectController.projects[p].title);
+            option.innerHTML  = projectController.projects[p].title;
+            projectSelect.appendChild(option);
+        }
+    }
+
     addBtn.addEventListener('click', (e) =>{
         openForm();
+        getProjects();
     });
     
     enterBtn.addEventListener('click', (e) =>{;
         taskInputController();
-        //formDiv.style.display = 'none';
         closeForm();
+        resetForm();
     });
    
     cancelBtn.addEventListener('click', (e) =>{
-        //formDiv.style.display = 'none';
         closeForm();
+        resetForm();
     });
 
 };

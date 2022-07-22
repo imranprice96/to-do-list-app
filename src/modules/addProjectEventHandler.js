@@ -31,8 +31,20 @@
         formDiv.classList.add('close-popup');
     }
 
+    const getProjects = () => {
+        let projectSelect = document.getElementById('project');
+        projectSelect.innerHTML = '';
+        for(const p in projectController.projects){
+            let option = document.createElement('option');
+            option.setAttribute('value', projectController.projects[p].title);
+            option.innerHTML  = projectController.projects[p].title;
+            projectSelect.appendChild(option);
+        }
+    }
+
     addBtn.addEventListener('click' , (e) => {
         openForm();
+        getProjects();
     });
     
     enterBtn.addEventListener('click', (e) =>{;

@@ -1,7 +1,7 @@
 const addProject = () =>{
     const div = document.createElement('div');
     div.setAttribute('id','add-project-div');
-    const form = document.createElement('div');
+    const form = document.createElement('form');
     form.setAttribute('id','add-project-form');
     form.setAttribute('action', '');
     form.setAttribute('method', 'get');
