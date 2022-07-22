@@ -42,6 +42,8 @@ const projectController = ( () => {
         console.log(projects);
     }
 
+    
+
     return {
         projects,
         addProject,

@@ -7,7 +7,7 @@ const pageController = () => {
     const all = document.getElementById('all');
     const today = document.getElementById('today');
     const projects = document.getElementById('projects');
-
+    
     all.addEventListener('focus', (e) => {
         content.innerHTML = '';
         content.appendChild(allPage());
