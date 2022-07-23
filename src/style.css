@@ -128,7 +128,6 @@ body{
     font-family: var(--font);
     display: flex;
     align-items: center;
-    border-left: 5px solid green;
     height: 4rem;
     background-color: var(--secondary1);
     
@@ -148,4 +147,18 @@ body{
     display: flex;
     flex-direction: column;
     margin: 2rem;
+}
+
+
+/*Priority Colours*/
+.low{
+    border-left: 5px solid #84cc16;
+}
+
+.medium{
+    border-left: 5px solid #eab308;
+}
+
+.high{
+    border-left: 5px solid #ef4444;
 }
