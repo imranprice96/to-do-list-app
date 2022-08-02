@@ -28,7 +28,7 @@ const taskCard = (title,project,description,duedate,priority) => {
     heading.classList.add('task-card-title');
 
     const cardTitle = document.createElement('div');
-    cardTitle.innerHTML = 'title';
+    cardTitle.innerHTML = title;
 
     const cardProject = document.createElement('div');
     cardProject.innerHTML = project;
