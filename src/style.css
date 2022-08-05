@@ -61,10 +61,17 @@ body{
     padding-top: 30px;
 }
 
-.nav div{
+.nav-item{
     padding: 10px;
     margin: 10px 0 10px 10px;
     border-radius: 10px;
+}
+
+.project-nav-tem{
+
+    margin: 10px 0 10px 40px;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .nav div:hover{
@@ -80,6 +87,12 @@ body{
     flex-direction: column;
     overflow: auto;
     max-height: 250px;
+}
+
+.projects{
+    display: flex;
+    
+    align-items: center;
 }
 
 

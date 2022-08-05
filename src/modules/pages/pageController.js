@@ -2,7 +2,7 @@ import allPage from './allPage';
 import todayPage from './todayPage';
 import projectsPage from './projectsPage';
 import projectController from '../projectController';
-import dropIcon from '../../icons/drop_down.png'
+import '../../style.css';
 
 const pageController = (() => {
     const content = document.getElementById('content');
@@ -49,6 +49,7 @@ const pageController = (() => {
             dropdown.style.display = 'flex';
         }
      });
+
    }
 
     const loadPage = () => {
@@ -68,13 +69,12 @@ const pageController = (() => {
             if(projectController.projects[p].title != 'default'){
                 const div = document.createElement('div');
                 div.innerHTML = projectController.projects[p].title;
+                div.setAttribute('tabindex', 0);
+                div.classList.add('project-nav-tem');
                 //add event listener to this div to run loadProjectPage()
                 dropdown.appendChild(div);
             }
         }
-        projectDrop();
-        //const dropDown = new Image();
-        //dropDown.src(dropIcon);
     };
 
     const reload = () =>{
@@ -87,7 +87,8 @@ const pageController = (() => {
     return {
         loadPage,
         loadNav,
-        reload
+        reload,
+        projectDrop
     };
 })();
 
