@@ -15,6 +15,12 @@ const taskEventHandler = ( () => {
         }
     }
     
+    //Edit task
+    //Bring up form filled with task info
+
+    //Details
+    //Bring up div showing more details
+
     return{
         removeTask
     }

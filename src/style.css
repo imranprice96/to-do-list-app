@@ -63,19 +63,24 @@ body{
 
 .nav-item{
     padding: 10px;
-    margin: 10px 0 10px 10px;
+    margin: 10px 10px 10px 10px;
     border-radius: 10px;
 }
 
 .project-nav-tem{
-
-    margin: 10px 0 10px 40px;
+    margin: 10px 10px 10px 40px;
     border-radius: 10px;
     padding: 10px;
 }
 
-.nav div:hover{
+.project-nav-tem:hover{
     font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-item:hover{
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .nav div:focus{
@@ -200,4 +205,17 @@ body{
 
 .high{
     border-left: 5px solid #ef4444;
+}
+
+
+.button{
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    padding: 1rem;
+}
+
+.button:hover{
+    background-color: #84cc16;
+    cursor: pointer;
 }
