@@ -43,10 +43,10 @@ const taskEventHandler = () => {
     addBtn.addEventListener('click', (e) =>{
         openForm();
         getProjects();
-        document.getElementById('title').focus();;
+        document.getElementById('title').focus();
     });
     
-    enterBtn.addEventListener('click', (e) =>{;
+    enterBtn.addEventListener('click', (e) =>{
         taskInputController();
         closeForm();
         resetForm();

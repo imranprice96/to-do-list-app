@@ -5,8 +5,10 @@ const project = (title) => {
     const addTask = (task) => {
         tasks.push(task);
     };
-    const deleteTask = (task) => {
-        // fitler / map
+    const deleteTask = (index) => {
+       if(index > -1){
+            tasks.splice(index,1);
+       }
     }
     const printProject = () =>{
         console.log(tasks);

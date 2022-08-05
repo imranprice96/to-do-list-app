@@ -1,9 +1,10 @@
 import projectController from "../projectController";
-import project from "../Project";
+import taskCard from "../taskCard";
 
 const allPage = () => {
 
     const div = document.createElement('div');
+    div.classList.add('tasks');
 
     const h1 = document.createElement('h1');
     h1.innerHTML = 'All';
@@ -19,8 +20,7 @@ const allPage = () => {
             let date = tempProject.tasks[t].dueDate;
             let prio = tempProject.tasks[t].priority;
             
-            const card = document.createElement('p');
-            card.innerHTML = `${projectTitle} ${title} ${desc} ${date} ${prio}`;
+            const card = taskCard(title,projectTitle,desc,date,prio);
             div.appendChild(card);
             //console.log(tempTasks);
         }

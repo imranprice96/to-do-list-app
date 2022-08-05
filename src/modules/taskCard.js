@@ -1,6 +1,9 @@
-import './style.css';
+import '../style.css'
 import editIcon from '../icons/edit.png';
 import deleteIcon from '../icons/delete.png';
+import taskEventHandler from './taskEventHandler';
+import pageController from './pages/pageController';
+import taskCardEventHandler from './taskCardEventHandler'
 
 const taskCard = (title,project,description,duedate,priority) => {
     const card = document.createElement('div');
@@ -29,9 +32,13 @@ const taskCard = (title,project,description,duedate,priority) => {
 
     const cardTitle = document.createElement('div');
     cardTitle.innerHTML = title;
+    cardTitle.classList.add('card-title');
 
     const cardProject = document.createElement('div');
-    cardProject.innerHTML = project;
+    if(project != 'default'){
+         cardProject.innerHTML = project;
+         cardProject.classList.add('card-project');
+    }
 
     heading.appendChild(cardTitle);
     heading.appendChild(cardProject);
@@ -51,12 +58,19 @@ const taskCard = (title,project,description,duedate,priority) => {
     const editImg = new Image();
     editImg.src = editIcon;
     edit.appendChild(editImg);
+    editImg.classList.add('card-icon');
 
     //Delete
     const deleteDiv = document.createElement('div');
     const deleteImg = new Image();
     deleteImg.src = deleteIcon;
     deleteDiv.appendChild(deleteImg);
+    deleteImg.classList.add('card-icon');
+
+    deleteImg.addEventListener('click', (e) => {
+        taskCardEventHandler.removeTask(project,title);
+        pageController.reload();
+    });
 
     //Append to card
     card.appendChild(doneBox);

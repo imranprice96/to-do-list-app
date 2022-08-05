@@ -150,6 +150,7 @@ body{
     align-items: center;
     height: 4rem;
     background-color: var(--secondary1);
+    margin-bottom: 5px;
     
 }
 
@@ -169,6 +170,24 @@ body{
     margin: 2rem;
 }
 
+.card-title{
+    font-size: 1.2rem;
+    font-weight:  bold;
+}
+
+.card-project{
+    font-style: italic;
+}
+
+.card-icon{
+    width: 25px;
+    height: 25px;
+}
+
+.card-icon:hover{
+    width: 30px;
+    height: 30px;
+}
 
 /*Priority Colours*/
 .low{
