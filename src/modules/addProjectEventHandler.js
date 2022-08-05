@@ -2,6 +2,7 @@
  import '../style.css';
  import projectController from "./projectController";
  import Project from './Project';
+ import pageController from "./pages/pageController";
 
  const addProjectEventHandler = () => {
     document.getElementById('body').appendChild(addProject());
@@ -41,6 +42,8 @@
 
     addBtn.addEventListener('click' , (e) => {
         openForm();
+        const title = document.getElementById('project-title');
+        title.focus();
     });
     
     enterBtn.addEventListener('click', (e) =>{;
@@ -53,11 +56,13 @@
         }
         closeForm();
         resetForm();
+        pageController.reload();
     });
    
     cancelBtn.addEventListener('click', (e) =>{
         closeForm();
         resetForm();
+        pageController.reload();
     });
     
     const validateInput = (newTitle) => {

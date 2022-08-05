@@ -13,6 +13,8 @@ const projectController = ( () => {
     const projects = [];
     const defaultProject = Project('default');
     projects.push(defaultProject);
+    const chores = Project('chores');
+    projects.push(chores);
 
     const findProject = (title) => {
         for(const p in projects){

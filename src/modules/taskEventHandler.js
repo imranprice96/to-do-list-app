@@ -1,6 +1,7 @@
 import projectController from './projectController';
 import taskInputController from './taskInputController';
 import '../style.css';
+import pageController from './pages/pageController';
 
 
 const taskEventHandler = () => {
@@ -42,17 +43,20 @@ const taskEventHandler = () => {
     addBtn.addEventListener('click', (e) =>{
         openForm();
         getProjects();
+        document.getElementById('title').focus();;
     });
     
     enterBtn.addEventListener('click', (e) =>{;
         taskInputController();
         closeForm();
         resetForm();
+        pageController.reload();
     });
    
     cancelBtn.addEventListener('click', (e) =>{
         closeForm();
         resetForm();
+        pageController.reload();
     });
 
 };

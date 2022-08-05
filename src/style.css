@@ -75,6 +75,13 @@ body{
     background-color: var(--primary2);
 }
 
+#projects-dropdown{
+    display: none;
+    flex-direction: column;
+    overflow: auto;
+    max-height: 250px;
+}
+
 
 
 .content{
