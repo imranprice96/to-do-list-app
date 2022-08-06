@@ -21,6 +21,13 @@ const taskEventHandler = ( () => {
     //Details
     //Bring up div showing more details
 
+    //TODO
+    /*
+        - display project page, add event to each
+        - display today projects
+        - storage
+    */
+
     return{
         removeTask
     }

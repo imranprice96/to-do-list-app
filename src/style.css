@@ -187,11 +187,11 @@ body{
 .card-icon{
     width: 25px;
     height: 25px;
+    opacity: 0.6;
 }
 
 .card-icon:hover{
-    width: 30px;
-    height: 30px;
+    opacity: 1;
 }
 
 /*Priority Colours*/
@@ -218,4 +218,8 @@ body{
 .button:hover{
     background-color: #84cc16;
     cursor: pointer;
+}
+
+.content{
+    font-family: var(--font);
 }

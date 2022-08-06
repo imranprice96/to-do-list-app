@@ -38,7 +38,9 @@ const pageController = (() => {
    };
 
    const loadProjectPage = (project) => {
-        
+        content.innerHTML = '';
+        content.appendChild(projectsPage(project));
+        pageID = [project.title];
    };
 
    const projectDrop = () => {
@@ -59,7 +61,11 @@ const pageController = (() => {
         }else if(pageID == 't'){
             loadTodayPage();
         }else{
-            loadProjectPage(pageID);
+            for(const p in projectController.projects){
+                if(projectController.projects[p].title == pageID){
+                    loadProjectPage(projectController.projects[p]);
+                }
+            }
         };
     };
 
@@ -71,8 +77,11 @@ const pageController = (() => {
                 div.innerHTML = projectController.projects[p].title;
                 div.setAttribute('tabindex', 0);
                 div.classList.add('project-nav-tem');
-                //add event listener to this div to run loadProjectPage()
                 dropdown.appendChild(div);
+
+                div.addEventListener('focus', (e) => {
+                    loadProjectPage(projectController.projects[p]);
+                });
             }
         }
     };
