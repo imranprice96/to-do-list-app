@@ -5,6 +5,7 @@ import taskEventHandler from './taskEventHandler';
 import pageController from './pages/pageController';
 import taskCardEventHandler from './taskCardEventHandler';
 import { format, parseISO } from 'date-fns';
+import detailPage from '../detailPage';
 
 const taskCard = (title,project,description,duedate,priority) => {
     const card = document.createElement('div');
@@ -50,9 +51,17 @@ const taskCard = (title,project,description,duedate,priority) => {
     const details =  document.createElement('div');
     details.innerHTML = 'Details';
 
+    details.classList.add('detail-btn');
+    details.addEventListener('click', (e) => {
+        document.getElementById('body').appendChild(detailPage(title,project,description,duedate,priority));
+    });
+
     //Due Date
     const due =  document.createElement('div');
-    const dateFormatted = format(parseISO(duedate), 'd LLLL');
+    let dateFormatted = '';
+    if(duedate != ''){
+        dateFormatted = format(parseISO(duedate), 'd LLLL');
+    }
     due.innerHTML = dateFormatted;
 
     //Edit
@@ -77,8 +86,8 @@ const taskCard = (title,project,description,duedate,priority) => {
     //Append to card
     card.appendChild(doneBox);
     card.appendChild(heading);
-    card.appendChild(details);
     card.appendChild(due);
+    card.appendChild(details);
     card.appendChild(edit);
     card.appendChild(deleteDiv);
 

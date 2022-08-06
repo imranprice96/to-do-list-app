@@ -223,3 +223,16 @@ body{
 .content{
     font-family: var(--font);
 }
+
+.detail-btn{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-left: 2px solid var(--primary2);
+}
+
+.detail-btn:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #84cc16;
+
+}
