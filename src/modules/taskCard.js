@@ -3,7 +3,8 @@ import editIcon from '../icons/edit.png';
 import deleteIcon from '../icons/delete.png';
 import taskEventHandler from './taskEventHandler';
 import pageController from './pages/pageController';
-import taskCardEventHandler from './taskCardEventHandler'
+import taskCardEventHandler from './taskCardEventHandler';
+import { format, parseISO } from 'date-fns';
 
 const taskCard = (title,project,description,duedate,priority) => {
     const card = document.createElement('div');
@@ -51,7 +52,8 @@ const taskCard = (title,project,description,duedate,priority) => {
 
     //Due Date
     const due =  document.createElement('div');
-    due.innerHTML = duedate;
+    const dateFormatted = format(parseISO(duedate), 'd LLLL');
+    due.innerHTML = dateFormatted;
 
     //Edit
     const edit = document.createElement('div');
