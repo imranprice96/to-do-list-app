@@ -46,6 +46,7 @@ const taskEventHandler = () => {
         document.getElementById('title').focus();
     });
     
+    //fix this and task input controller to module
     enterBtn.addEventListener('click', (e) =>{
         taskInputController();
         closeForm();

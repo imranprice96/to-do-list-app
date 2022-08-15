@@ -25,7 +25,17 @@ const taskInputController = () => {
 
 
 const validateInput = (title, description, date) => {
+    const t = document.getElementById('title').value;
+    const tError = document.getElementById('title-error');
+    const d = document.getElementById('description').value;
+    const due = document.getElementById('due-date').value;
     // add date validation for min date
+
+    if(t.length < 2){
+        //tError.textContent = 'Title must be two or more characters'
+       // console.log(tError)
+        //return false;
+    }
     return title != '';
 };
 
