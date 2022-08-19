@@ -11,6 +11,9 @@ const addProject = () =>{
     title.setAttribute('type', 'text');
     title.setAttribute('name', 'project-title');
     title.setAttribute('id', 'project-title');
+    title.required = true;
+    title.minLength = 2;
+
 
     const tLabel = document.createElement('label');
     tLabel.setAttribute('for', 'project-title');

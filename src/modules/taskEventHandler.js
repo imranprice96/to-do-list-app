@@ -46,12 +46,15 @@ const taskEventHandler = () => {
         document.getElementById('title').focus();
     });
     
-    //fix this and task input controller to module
+    
     enterBtn.addEventListener('click', (e) =>{
-        taskInputController();
-        closeForm();
-        resetForm();
-        pageController.reload();
+        taskInputController.getInput();
+        if(document.getElementById('task-form').reportValidity()){
+            taskInputController.addTask();
+            closeForm();
+            resetForm();
+            pageController.reload();
+        }
     });
    
     cancelBtn.addEventListener('click', (e) =>{

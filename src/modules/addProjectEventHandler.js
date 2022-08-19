@@ -49,14 +49,14 @@
     enterBtn.addEventListener('click', (e) =>{;
         // TODO: project input controller
         const title = document.getElementById('project-title').value;
-        if(validateInput(title)){
+        if(form.reportValidity()){
             const newProject = Project(title);
             projectController.addProject(newProject);
             projectController.printProjects();
+            closeForm();
+            resetForm();
+            pageController.reload();
         }
-        closeForm();
-        resetForm();
-        pageController.reload();
     });
    
     cancelBtn.addEventListener('click', (e) =>{
@@ -64,10 +64,7 @@
         resetForm();
         pageController.reload();
     });
-    
-    const validateInput = (newTitle) => {
-        return newTitle.value != '' ? true : false;
-    }
+
     //add way to close the other form and reset if it is already open
  }
 

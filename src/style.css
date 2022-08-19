@@ -236,3 +236,12 @@ body{
     color: #84cc16;
 
 }
+
+#description{
+    overflow: auto;
+    width:70%;
+}
+
+input{
+    padding: 5px;
+}
