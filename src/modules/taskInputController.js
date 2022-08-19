@@ -26,10 +26,6 @@ const taskInputController = ( () => {
         dueDate = document.getElementById('date').value;
         priority = getPriority();
         project = document.getElementById('project');
-
-        console.log(title);
-        console.log(description);
-        console.log(dueDate);
     }
 
     const addTask = () => {
