@@ -6,6 +6,7 @@ import pageController from './pages/pageController';
 import taskCardEventHandler from './taskCardEventHandler';
 import { format, parseISO } from 'date-fns';
 import detailPage from '../detailPage';
+import taskInputController from './taskInputController';
 
 const taskCard = (title,project,description,duedate,priority) => {
     const card = document.createElement('div');
@@ -72,6 +73,7 @@ const taskCard = (title,project,description,duedate,priority) => {
     editImg.classList.add('card-icon');
 
     editImg.addEventListener('click', (e) =>{
+        taskInputController.populateEditForm(title,project,duedate,description,priority);
         taskEventHandler.openForm();
     });
 

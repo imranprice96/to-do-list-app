@@ -1,5 +1,7 @@
 import Task from './Task';
 import projectController from './projectController';
+import taskEventHandler from './taskEventHandler';
+import taskCardEventHanlder from './taskCardEventHandler'
 
 //Get input from form
 const taskInputController = ( () => {
@@ -12,6 +14,12 @@ const taskInputController = ( () => {
         if(low.checked) return 'low';
         if(medium.checked) return 'medium';
         if(high.checked) return 'high';
+    }
+
+    const setPriority = (priority) => {
+        if(priority == 'low'){} document.getElementById('low').checked = true;
+        if(priority == 'medium') document.getElementById('medium').checked = true;
+        if(priority == 'high') document.getElementById('high').checked = true;
     }
 
     let title = document.getElementById('title').value;
@@ -35,11 +43,20 @@ const taskInputController = ( () => {
         }
     }
 
-    
+    const populateEditForm = (title, project, date, description, priority) => {
+        document.getElementById('title').value = title;
+        document.getElementById('description').value = description;
+        document.getElementById('date').value = date;
+        setPriority(priority);
+        document.getElementById('project').value = project;
+        
+        taskCardEventHanlder.removeTask(project,title);
+    }
     
     return {
         addTask,
-        getInput
+        getInput,
+        populateEditForm
     }
 })();
 

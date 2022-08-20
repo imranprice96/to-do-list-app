@@ -2,6 +2,7 @@ import projectController from './projectController';
 import taskInputController from './taskInputController';
 import '../style.css';
 import pageController from './pages/pageController';
+import taskCardEventHanlder from './taskCardEventHandler';
 
 
 const taskEventHandler = (() => {
@@ -10,6 +11,11 @@ const taskEventHandler = (() => {
     const cancelBtn = document.getElementById('add-close');
     const enterBtn = document.getElementById('add-submit');
     formDiv.classList.add('close-popup');
+
+    // Variables for editing
+    let isEdit;
+    let currentProject;
+    let currentTitle;
 
     const openForm = () => {
         if(formDiv.classList.contains('close-popup')){
@@ -32,6 +38,7 @@ const taskEventHandler = (() => {
     const getProjects = () => {
         let projectSelect = document.getElementById('project');
         projectSelect.innerHTML = '';
+        console.log(projectController.projects)
         for(const p in projectController.projects){
             let option = document.createElement('option');
             option.setAttribute('value', projectController.projects[p].title);
@@ -40,7 +47,9 @@ const taskEventHandler = (() => {
         }
     }
 
+
     addBtn.addEventListener('click', (e) =>{
+        isEdit = false;
         openForm();
         getProjects();
         document.getElementById('title').focus();
@@ -50,7 +59,13 @@ const taskEventHandler = (() => {
     enterBtn.addEventListener('click', (e) =>{
         taskInputController.getInput();
         if(document.getElementById('task-form').reportValidity()){
-            taskInputController.addTask();
+            if(!isEdit){
+                taskInputController.addTask();
+            }else{
+                taskInputController.removeTask();
+                taskInputController.addTask();
+            }
+            
             closeForm();
             resetForm();
             pageController.reload();
@@ -67,7 +82,10 @@ const taskEventHandler = (() => {
         openForm,
         closeForm,
         resetForm,
-        getProjects
+        getProjects,
+        isEdit,
+        currentProject,
+        currentTitle
     }
 
 })();
