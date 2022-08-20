@@ -9,9 +9,17 @@ const project = (title) => {
        if(index > -1){
             tasks.splice(index,1);
        }
-    }
+    };
     const printProject = () =>{
         console.log(tasks);
+    };
+    const editTask = (index, newTitle, newDescription, newDueDate, newPriority) => {
+        if(index > -1){
+            tasks[index].title =  newTitle;
+            tasks[index].description =  newDescription;
+            tasks[index].dueDate =  newDueDate;
+            tasks[index].priority =  newPriority;
+       }
     }
     return {
         title, 
@@ -19,6 +27,7 @@ const project = (title) => {
         setTitle,
         addTask,
         deleteTask,
+        editTask,
         printProject,
     };
 };

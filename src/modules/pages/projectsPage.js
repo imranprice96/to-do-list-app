@@ -12,21 +12,10 @@ const projectsPage = (project) => {
     h1.innerHTML = project.title;
     div.appendChild(h1);
 
-    /*
-    for(const task in project.tasks){
-        let title = project.tasks[task].title;
-        let desc = project.tasks[task].description;
-        let date = project.tasks[task].dueDate;
-        let prio = project.tasks[task].priority;
-        
-        const card = taskCard(title,project.title,desc,date,prio);
-        div.appendChild(card);
-    }*/
-
     const sortedDesc = project.tasks.sort(
         (a, b) => Number(parseISO(a.dueDate)) - Number(parseISO(b.dueDate)),
     );
-       // console.log(sortedDesc);
+    
     for(const t in sortedDesc){
         let title = sortedDesc[t].title
         let desc = sortedDesc[t].description;
@@ -36,6 +25,10 @@ const projectsPage = (project) => {
         const card = taskCard(title,project.title,desc,date,prio);
         div.appendChild(card);
     }
+
+    //button
+    //delete is empty
+    //add task
 
     return div;
 }

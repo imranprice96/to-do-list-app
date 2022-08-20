@@ -4,7 +4,7 @@ import '../style.css';
 import pageController from './pages/pageController';
 
 
-const taskEventHandler = () => {
+const taskEventHandler = (() => {
     const formDiv = document.getElementById('form-overlay');
     const addBtn = document.getElementById('add-btn');
     const cancelBtn = document.getElementById('add-close');
@@ -63,5 +63,12 @@ const taskEventHandler = () => {
         pageController.reload();
     });
 
-};
+    return{
+        openForm,
+        closeForm,
+        resetForm,
+        getProjects
+    }
+
+})();
 export default taskEventHandler;

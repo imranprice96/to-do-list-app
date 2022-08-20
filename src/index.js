@@ -4,5 +4,5 @@ import addProjectEventHandler from './modules/addProjectEventHandler';
 
 pageController.reload();
 pageController.projectDrop();
-taskEventHandler();
+//taskEventHandler();
 addProjectEventHandler();

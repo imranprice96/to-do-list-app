@@ -71,6 +71,10 @@ const taskCard = (title,project,description,duedate,priority) => {
     edit.appendChild(editImg);
     editImg.classList.add('card-icon');
 
+    editImg.addEventListener('click', (e) =>{
+        taskEventHandler.openForm();
+    });
+
     //Delete
     const deleteDiv = document.createElement('div');
     const deleteImg = new Image();
