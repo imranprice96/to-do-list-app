@@ -87,8 +87,10 @@ const pageController = (() => {
     };
 
     const reload = () =>{
-        loadNav();
+        console.log(pageID + '++');
         loadPage();
+        loadNav();
+        console.log(pageID + '--');
     }
 
     //add loadpage to add buttons to refresh on submit
@@ -97,7 +99,8 @@ const pageController = (() => {
         loadPage,
         loadNav,
         reload,
-        projectDrop
+        projectDrop,
+        loadAllPage,
     };
 })();
 

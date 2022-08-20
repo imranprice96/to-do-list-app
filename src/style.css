@@ -245,3 +245,22 @@ body{
 input{
     padding: 5px;
 }
+
+.project-header{
+    display: flex;
+    gap: 10px;
+}
+
+.project-header button{
+    border: none;
+    font-size: 1rem;
+    background: none;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.project-header button:hover{
+    color: var(--primary1);
+    font-weight: bold;
+    cursor: pointer;
+}

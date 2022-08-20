@@ -38,7 +38,7 @@ const taskEventHandler = (() => {
     const getProjects = () => {
         let projectSelect = document.getElementById('project');
         projectSelect.innerHTML = '';
-        console.log(projectController.projects)
+        //console.log(projectController.projects)
         for(const p in projectController.projects){
             let option = document.createElement('option');
             option.setAttribute('value', projectController.projects[p].title);

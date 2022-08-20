@@ -18,9 +18,7 @@ const projectController = ( () => {
 
     const findProject = (title) => {
         for(const p in projects){
-            //console.log(projects[p].title);
             if(projects[p].title == title){
-                //console.log(projects[p]);
                 return projects[p];
             }
         }
@@ -42,7 +40,15 @@ const projectController = ( () => {
 
     const printProjects = () => {
         console.log(projects);
-    }
+    };
+
+    const deleteProject = (title) => {
+        for(const p in projects){
+            if(projects[p].title == title){
+                projects.splice(p, 1);
+            }
+        }  
+    };
 
     
 
@@ -51,6 +57,7 @@ const projectController = ( () => {
         addProject,
         findProject,
         printProjects,
+        deleteProject
     };
 })();
 
