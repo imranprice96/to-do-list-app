@@ -52,7 +52,6 @@
         if(form.reportValidity()){
             const newProject = Project(title);
             projectController.addProject(newProject);
-            projectController.printProjects();
             closeForm();
             resetForm();
             pageController.reload();

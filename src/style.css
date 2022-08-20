@@ -156,6 +156,8 @@ body{
     height: 4rem;
     background-color: var(--secondary1);
     margin-bottom: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
     
 }
 
@@ -185,8 +187,8 @@ body{
 }
 
 .card-icon{
-    width: 25px;
-    height: 25px;
+    width: 2rem;
+    height: 2rem;
     opacity: 0.6;
 }
 

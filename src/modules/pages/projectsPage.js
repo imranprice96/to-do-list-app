@@ -4,7 +4,7 @@ import { parseISO } from 'date-fns';
 import '../../style.css';
 import projectController from "../projectController";
 import pageController from "./pageController";
-
+import taskEventHandler from "../taskEventHandler";
 
 const projectsPage = (project) => {
 
@@ -47,6 +47,7 @@ const projectsPage = (project) => {
     }
 
 
+    //TODO - move events to event handler
     deleteBtn.addEventListener('click', (e) => {
         if(project.tasks.length>0){
             alert('Project must by empty before deleting.');
@@ -55,6 +56,13 @@ const projectsPage = (project) => {
             pageController.loadAllPage();
             pageController.reload();
         }
+    });
+
+    addBtn.addEventListener('click', (e) => {
+        taskEventHandler.openForm();
+        taskEventHandler.getProjects();
+        document.getElementById('title').focus();
+        document.getElementById('project').value = project.title;
     });
 
     return div;

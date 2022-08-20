@@ -87,10 +87,8 @@ const pageController = (() => {
     };
 
     const reload = () =>{
-        console.log(pageID + '++');
         loadPage();
         loadNav();
-        console.log(pageID + '--');
     }
 
     //add loadpage to add buttons to refresh on submit

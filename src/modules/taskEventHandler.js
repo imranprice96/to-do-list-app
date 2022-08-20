@@ -59,13 +59,7 @@ const taskEventHandler = (() => {
     enterBtn.addEventListener('click', (e) =>{
         taskInputController.getInput();
         if(document.getElementById('task-form').reportValidity()){
-            if(!isEdit){
-                taskInputController.addTask();
-            }else{
-                taskInputController.removeTask();
-                taskInputController.addTask();
-            }
-            
+            taskInputController.addTask();
             closeForm();
             resetForm();
             pageController.reload();

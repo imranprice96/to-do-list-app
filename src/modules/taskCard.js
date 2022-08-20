@@ -75,6 +75,7 @@ const taskCard = (title,project,description,duedate,priority) => {
     editImg.addEventListener('click', (e) =>{
         taskInputController.populateEditForm(title,project,duedate,description,priority);
         taskEventHandler.openForm();
+        document.getElementById('title').focus();
     });
 
     //Delete
