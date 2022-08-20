@@ -11,23 +11,21 @@ const todayPage = () => {
     div.appendChild(h1);
 
     const today = format(new Date(), 'yyyy-MM-dd');
-    today
+    console.log(today);
 
     for(const p in projectController.projects ){
         let tempProject = projectController.projects[p];
         let projectTitle = projectController.projects[p].title;
-        //console.log(tempProject);
         for(const t in tempProject.tasks){
             let title = tempProject.tasks[t].title;
             let desc = tempProject.tasks[t].description;
             let date = tempProject.tasks[t].dueDate;
             let prio = tempProject.tasks[t].priority;
             
-            const card = taskCard(title,projectTitle,desc,date,prio);
-            div.appendChild(card);
-            console.log(today==date);
-            console.log(format(parseISO(date), 'd LLLL'));
-            //console.log(tempTasks);
+            if(today == date){
+                const card = taskCard(title,projectTitle,desc,date,prio);
+                div.appendChild(card);
+            }
         }
     }
 
