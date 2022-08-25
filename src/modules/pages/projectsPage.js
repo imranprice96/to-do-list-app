@@ -46,8 +46,9 @@ const projectsPage = (project) => {
         div.appendChild(card);
     }
 
-
-    //TODO - move events to event handler
+    // ------------------------------------------
+    //TODO
+    //Move events to event handler
     deleteBtn.addEventListener('click', (e) => {
         if(project.tasks.length>0){
             alert('Project must by empty before deleting.');
@@ -64,6 +65,7 @@ const projectsPage = (project) => {
         document.getElementById('title').focus();
         document.getElementById('project').value = project.title;
     });
+    // ------------------------------------------
 
     return div;
 }

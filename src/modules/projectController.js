@@ -1,13 +1,5 @@
 import Project from './Project';
 
-/*
-const projectController = () => {
-    const projects = [];
-    const defaultProject = Project('default');
-    projects.push(defaultProject);
-
-}
-*/
 
 const projectController = ( () => {
     const projects = [];

@@ -20,7 +20,6 @@
     form.classList.add('popup-stlying');
 
 
-    //add form resets
     const openForm = () => {
         if(formDiv.classList.contains('close-popup')){
             formDiv.classList.remove('close-popup');
@@ -47,7 +46,6 @@
     });
     
     enterBtn.addEventListener('click', (e) =>{;
-        // TODO: project input controller
         const title = document.getElementById('project-title').value;
         if(form.reportValidity()){
             const newProject = Project(title);
@@ -64,7 +62,6 @@
         pageController.reload();
     });
 
-    //add way to close the other form and reset if it is already open
  }
 
  export default addProjectEventHandler;
