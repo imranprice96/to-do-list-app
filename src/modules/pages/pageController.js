@@ -19,13 +19,7 @@ const pageController = (() => {
     today.addEventListener('focus', (e) => {
         loadTodayPage();
     });
-    /*Replace with array of projects
-    ------------------------------------
-    projects.addEventListener('focus', (e) => {
-        content.innerHTML = '';
-        content.appendChild(projectsPage());
-    });
-    */
+
    const loadAllPage = () =>{
         content.innerHTML = '';
         content.appendChild(allPage());
@@ -91,12 +85,8 @@ const pageController = (() => {
         loadPage();
         loadNav();
         storage.saveData();
-        //storage.loadData();
     }
 
-
-    //add loadpage to add buttons to refresh on submit
-    // add validation to input
     return {
         loadPage,
         loadNav,

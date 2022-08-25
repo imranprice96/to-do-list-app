@@ -7,12 +7,6 @@ const storage = (() => {
         localStorage.clear();
         localStorage.setItem('tasks', JSON.stringify(storeTasks()))
         localStorage.setItem('projects', JSON.stringify(storeProjects()));
-        console.log('Local Storage');
-        console.log(localStorage);
-        console.log('allTasks');
-        console.log(storeTasks());
-        //console.log(JSON.parse(localStorage.tasks));
-
     }
 
     const loadData = () => {
@@ -22,26 +16,16 @@ const storage = (() => {
 
     const loadProjects = () => {
         const projects = JSON.parse(localStorage.projects);
-        console.log('Load Projects');
-        console.log(projects);
-        
         for(const p in projects){
-            console.log(projects[p])
             projectController.addProject(project(projects[p]))
         };
-        
     }
 
     const loadTasks = () => {
         const tasks = JSON.parse(localStorage.tasks);
-        console.log('Load Tasks');
-        console.log(tasks);
-        
         if(tasks.length>0){
             for(const t in tasks){
-                console.log(tasks[t]);
                 projectController.printProjects();
-                console.log(projectController.findProject(tasks[t].project));
                 projectController.findProject(tasks[t].project).addTask(tasks[t].task);
             }
             projectController.printProjects();
@@ -71,8 +55,6 @@ const storage = (() => {
         for(const p in projectController.projects){
             projects.push(projectController.projects[p].title);
         }
-        console.log('Store Projects');
-        console.log(projects);
         return projects;
     }
 
