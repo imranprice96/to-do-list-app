@@ -60,9 +60,7 @@ const taskCard = (title,project,description,duedate,priority) => {
     //Due Date
     const due =  document.createElement('div');
     let dateFormatted = '';
-    if(duedate != ''){
-        dateFormatted = format(parseISO(duedate), 'd LLLL yyyy');
-    }
+    dateFormatted = format(parseISO(duedate), 'd LLLL yyyy');
     due.innerHTML = dateFormatted;
 
     //Edit

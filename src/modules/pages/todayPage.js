@@ -11,7 +11,6 @@ const todayPage = () => {
     div.appendChild(h1);
 
     const today = format(new Date(), 'yyyy-MM-dd');
-    console.log(today);
 
     for(const p in projectController.projects ){
         let tempProject = projectController.projects[p];

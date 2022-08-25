@@ -3,6 +3,7 @@ import todayPage from './todayPage';
 import projectsPage from './projectsPage';
 import projectController from '../projectController';
 import '../../style.css';
+import storage from '../../storage';
 
 const pageController = (() => {
     const content = document.getElementById('content');
@@ -89,7 +90,10 @@ const pageController = (() => {
     const reload = () =>{
         loadPage();
         loadNav();
+        storage.saveData();
+        //storage.loadData();
     }
+
 
     //add loadpage to add buttons to refresh on submit
     // add validation to input

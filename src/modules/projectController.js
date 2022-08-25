@@ -33,6 +33,7 @@ const projectController = ( () => {
         for(const p in projects){
             if(projects[p].title == title) isUnique = false;
         };
+        if(title == '') isUnique = false;
         return isUnique;
     };
 
@@ -47,8 +48,6 @@ const projectController = ( () => {
             }
         }  
     };
-
-    
 
     return {
         projects,

@@ -1,15 +1,19 @@
 import projectController from "./modules/projectController";
 import Project from "./modules/Project";
 import Task from "./modules/Task";
+import { format, parseISO } from 'date-fns';
 
-
+//Add to index.js to populate project with test data
 const testData = () => {
+    const today = format(new Date(), 'yyyy-MM-dd');
 
     //default
     projectController.projects[0].addTask(Task('Car service','Book car service for sometime next month.','2022-08-05','low'));
     projectController.projects[0].addTask(Task('Lawns','Mow the lawns.','2022-06-10','medium'));
     projectController.projects[0].addTask(Task('Gift','Buy birthday gift.','2022-07-19','high'));
-    projectController.projects[0].addTask(Task('Test app','Fill app with test data.','2022-09-21','medium'));
+    projectController.projects[0].addTask(Task('Test app 1','Fill app with test data.','2022-09-21','medium'));
+    projectController.projects[0].addTask(Task('Test app 2','Create task due today.',today,'medium'));
+
 
     //Chores
     const Chores = Project('Chores');
@@ -19,6 +23,8 @@ const testData = () => {
     Chores.addTask(Task('Gardening','','2022-09-10','low'));
     Chores.addTask(Task('Windows','','2022-08-08','low'));
     Chores.addTask(Task('Kitchen','Tidy the kitchen','2022-10-27','medium'));
+    Chores.addTask(Task('Test App 3','Create chore due today',today,'low'));
+
 
     //Groceries
     const Groceries = Project('Groceries');
