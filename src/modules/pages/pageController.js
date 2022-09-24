@@ -14,6 +14,10 @@ const pageController = (() => {
 	const dropdown = document.getElementById("projects-dropdown");
 	let pageID = "a";
 
+	const dropImage = new Image();
+	dropImage.src = dropIcon;
+	document.getElementById("drop-down").appendChild(dropImage);
+
 	all.addEventListener("focus", (e) => {
 		loadAllPage();
 	});
@@ -66,9 +70,6 @@ const pageController = (() => {
 
 	const loadNav = () => {
 		dropdown.innerHTML = "";
-		const dropImage = new Image();
-		dropImage.src = dropIcon;
-		document.getElementById("drop-down").appendChild(dropImage);
 
 		for (const p in projectController.projects) {
 			if (projectController.projects[p].title != "default") {
